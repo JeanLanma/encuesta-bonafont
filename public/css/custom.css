@@ -1,0 +1,40 @@
+.btn-pink,
+.btn-pink:hover,
+.bth-pink:active {
+    color: #fff;
+    background-color: #ff8d6b;
+    border-color: #ff8d6b;
+}
+
+.login.login-v2 .login-content .form-check-input:checked {
+    background-color: #ff8d6b;
+}
+
+.login.login-v2 .login-header .brand .logo {
+    background-color: #ff8d6b;
+}
+
+.login.login-with-news-feed .login-container .login-header .brand .logo {
+    background-color: #ff8d6b;
+}
+
+
+
+/** /
+
+/**/
+
+@font-face {
+    font-family: "Nutmeg";
+    src: url("../webfonts/Nutmeg-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+.page-header {
+    font-family: "Nutmeg";
+}
+
+.app-header .navbar-brand .navbar-logo {
+    background-color: #ff8d6b;
+}
