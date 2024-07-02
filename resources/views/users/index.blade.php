@@ -10,7 +10,7 @@
         <!-- END breadcrumb -->
         <!-- BEGIN page-header -->
         <h1 class="page-header">Usuarios
-            @can('admin.users.create')
+            @can('admin.users.index')
             <a href="{{ route('admin.users.create') }}" class="btn btn-xs btn-outline-primary">
                 Añadir usuario
             </a>
@@ -21,6 +21,15 @@
         <div class="row">
             <!-- BEGIN col-6 -->
             <div class="col-xl-12">
+                <!-- BEGIN Alert -->
+                @if(session('info'))
+                <div class="alert alert-info alert-dismissible fade show" role="alert">
+                    <strong>Mensaje</strong>
+                    {{ session('info') }}
+                </div>
+                @endif
+                <!-- BEGIN Alert -->
+
                 <!-- BEGIN panel -->
                 <div class="panel panel-inverse" data-sortable-id="table-basic-7">
                     <!-- BEGIN panel-heading -->
@@ -59,6 +68,9 @@
                                         <td>{{ $user->employee_code }}</td>
                                         <td nowrap>
                                             <a href="{{ route('admin.users.edit', $user) }}" class="btn btn-sm btn-primary">Editar</a>
+                                            @can('admin.surveys.create')
+                                            <a href="{{ route('admin.users.remove', $user) }}" class="btn btn-sm btn-danger">Eliminar</a>
+                                            @endcan
                                         </td>
                                     </tr>                                        
                                     @endforeach

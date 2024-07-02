@@ -31,6 +31,8 @@ Route::prefix('admin')->middleware(['web', 'auth'])->group(function() {
 
     Route::resource('users', 'UserController')->names('admin.users');
 
+    Route::get('/users/remove/{user}', 'UserController@destroy')->name('admin.users.remove');
+
     Route::get('/surveys/download/{survey}', 'SurveyController@download')->name('surveys.download');
 
     Route::get('/surveys', 'SurveyController@index')->name('dashboard.surveys');
